@@ -3,12 +3,12 @@
 <head>
     <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
     <title>民国清流关系图谱-Bykaylee</title>
-    <script type="text/javascript" src="{{url_for('static',filename='./lib/interactive-graph-0.1.0/interactive-graph.min.js')}}"></script>
-    <link type="text/css" rel="stylesheet" href="{{url_for('static', filename='./lib/interactive-graph-0.1.0/interactive-graph.min.css')}}">
-    <script src="{{url_for('static',filename='./lib/jquery-3.2.1/jquery-3.2.1.min.js')}}"></script>
-    <script src="{{url_for('static',filename='./lib/jquery-3.2.1/jquery-ui.js')}}"></script>
-    <link rel="stylesheet" href="{{url_for('static',filename='./lib/jquery-3.2.1/jquery-ui.css')}}">
-    <link href="{{url_for('static',filename='./lib/font-awesome-4.7.0/css/font-awesome.min.css')}}" rel="stylesheet">
+    <script type="text/javascript" src="./static/lib/interactive-graph-0.1.0/interactive-graph.min.js"></script>
+    <link type="text/css" rel="stylesheet" href="./static/lib/interactive-graph-0.1.0/interactive-graph.min.css">
+    <script src="./static/lib/jquery-3.2.1/jquery-3.2.1.min.js"></script>
+    <script src="./static/lib/jquery-3.2.1/jquery-ui.js"></script>
+    <link rel="stylesheet" href="./static/lib/jquery-3.2.1/jquery-ui.css">
+    <link href="./static/lib/font-awesome-4.7.0/css/font-awesome.min.css" rel="stylesheet">
     <style type="text/css">
         body {
             margin: 0px;
@@ -30,7 +30,7 @@
     <script type="text/javascript">
         igraph.i18n.setLanguage("chs");
         var app = new igraph.GraphNavigator(document.getElementById('graphArea'));
-           app.loadGson("{{url_for('static',filename='minguo.json')}}", {
+           app.loadGson("./static/minguo.json", {
             "onGetNodeDescription": function (node) {
                 var description = "<p align=center>";
                 if (node.image !== undefined) {
@@ -47,7 +47,6 @@
                 return description;
             }
         }, function () {});
-        //app.connect("http://localhost:9999/graphserver/connector-bolt");
     </script>
 </body>
 
